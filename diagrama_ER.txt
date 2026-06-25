@@ -1,0 +1,21 @@
+===========================================
+   DIAGRAMA E-R - TIENDA DE LIBROS (3FN)
+===========================================
+
++----------------+       +----------------+       +----------------+
+|     LIBRO      |       |     VENTA      |       |    CLIENTE     |
++----------------+       +----------------+       +----------------+
+| PK isbn        |1-----N| PK id_venta    |N-----1| PK id_cliente  |
+|    titulo      |       | FK isbn        |       |    nombre      |
+|    autor       |       | FK id_cliente  |       |    correo      |
+|    fecha_pub   |       |    metodo_pago |       |    direccion   |
+|    editorial   |       |    monto       |       |    telefono    |
+|    categoria   |       |    fecha_venta |       +----------------+
+|    precio      |       +----------------+
+|    stock       |
++----------------+
+
+CARDINALIDADES:
+- Un LIBRO puede tener muchas VENTAS (1:N)
+- Un CLIENTE puede tener muchas VENTAS (1:N)
+- Una VENTA pertenece a 1 LIBRO y 1 CLIENTE
